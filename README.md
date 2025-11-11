@@ -1,6 +1,6 @@
-# Weidert Group LLM Search Visibility Tool
+# Custom Processing Services (CPS) LLM Search Visibility Tool
 
-AI-Powered Competitive Intelligence for B2B Industrial Marketing. Analyze brand visibility across ChatGPT, Gemini & Perplexity.
+AI-Powered Competitive Intelligence for Particle Processing Services. Analyze brand visibility across ChatGPT, Gemini & Perplexity.
 
 ## Features
 
@@ -54,7 +54,7 @@ To enable the "Upload to Google Sheets" feature, you need to set up Google Cloud
 
 1. In Google Cloud Console, go to **IAM & Admin** > **Service Accounts**
 2. Click **Create Service Account**
-3. Give it a name (e.g., "Weidert LLM Tool")
+3. Give it a name (e.g., "CPS LLM Tool")
 4. Click **Create and Continue**
 5. Skip the optional steps and click **Done**
 6. Click on the service account you just created
@@ -123,7 +123,7 @@ streamlit run app.py
    - See win/loss analysis and co-mention patterns
 
 4. **Gap Analysis & Opportunities** tab:
-   - Identify queries where Weidert is missing
+   - Identify queries where CPS is missing
    - See which competitors are winning in your gaps
    - Get prioritized action items
 
@@ -144,8 +144,8 @@ If you encounter rate limit errors:
 
 ## Support
 
-For issues or questions, contact the Weidert Group development team.
+For issues or questions, contact the Custom Processing Services development team.
 
 ## License
 
-Proprietary - Weidert Group
+Proprietary - Custom Processing Services

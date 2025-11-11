@@ -176,7 +176,7 @@ def main():
     print()
     print("╔" + "═" * 58 + "╗")
     print("║" + " " * 58 + "║")
-    print("║" + "  Weidert LLM Tool - Google Sheets Connection Test".center(58) + "║")
+    print("║" + "  CPS LLM Tool - Google Sheets Connection Test".center(58) + "║")
     print("║" + " " * 58 + "║")
     print("╚" + "═" * 58 + "╝")
     print()

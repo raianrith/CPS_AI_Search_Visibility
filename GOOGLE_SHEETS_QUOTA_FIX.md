@@ -1,4 +1,4 @@
-# Google Sheets Storage Quota Fix
+# Google Sheets Storage Quota Fix for CPS
 
 ## The Problem
 
@@ -16,7 +16,7 @@ Instead of the service account creating spreadsheets, **you'll create ONE spread
 
 1. Go to [Google Sheets](https://sheets.google.com)
 2. Click **"+ Blank"** to create a new spreadsheet
-3. Name it: **"Weidert LLM Results - Master"** (or any name you want)
+3. Name it: **"CPS LLM Results - Master"** (or any name you want)
 
 ### Step 2: Share it with the Service Account
 
@@ -45,7 +45,7 @@ When you upload results in the app, you have **two options**:
 
 **OPTION B - Use Master Sheet:**
 1. Leave the URL box empty
-2. The app will look for a sheet named "Weidert LLM Results - Master" shared with the service account
+2. The app will look for a sheet named "CPS LLM Results - Master" shared with the service account
 3. If found, it adds results as new tabs
 
 ---
@@ -77,7 +77,7 @@ When you upload results in the app, you have **two options**:
 - **Check**: The email should have "Editor" permissions
 
 ### Error: "Master spreadsheet not found"
-- **Solution**: Either paste your sheet URL in the text box, OR create a sheet named exactly "Weidert LLM Results - Master" and share it
+- **Solution**: Either paste your sheet URL in the text box, OR create a sheet named exactly "CPS LLM Results - Master" and share it
 
 ### How do I organize old results?
 - Each upload creates a new tab in your sheet

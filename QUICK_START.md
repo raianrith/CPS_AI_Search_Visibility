@@ -1,4 +1,4 @@
-# Quick Start Guide - Google Sheets Upload Fix
+# Quick Start Guide - Google Sheets Upload Fix for CPS
 
 ## The Problem
 When you click "Upload to Google Sheets", nothing happens.

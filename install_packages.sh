@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "================================================"
-echo "Weidert LLM Tool - Package Installation"
+echo "CPS LLM Tool - Package Installation"
 echo "================================================"
 echo ""
 

@@ -32,12 +32,12 @@ sia = SentimentIntensityAnalyzer()
 
 # ─── PAGE CONFIG & GLOBAL CSS ─────────────────────────────────────────────────
 st.set_page_config(
-    page_title="Weidert Group LLM Search Visibility Tool", 
+    page_title="Custom Processing Services (CPS) LLM Search Visibility Tool", 
     layout="wide",
     initial_sidebar_state="expanded"
 )
 
-# Enhanced CSS with Weidert branding
+# Enhanced CSS with CPS branding
 st.markdown("""
 <style>
 /* Center the tabs */
@@ -133,86 +133,87 @@ div.stButton > button {
 </style>
 """, unsafe_allow_html=True)
 
-# ─── PREDEFINED QUERIES FOR WEIDERT GROUP ───────────────────────────────────
+# ─── PREDEFINED QUERIES FOR CUSTOM PROCESSING SERVICES (CPS) ───────────────────────────────────
 PREDEFINED_QUERIES = [
-    "What industries does Weidert Group serve? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
-    "How is Weidert Group different from other HubSpot agencies? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
-    "What results has Weidert Group delivered for manufacturers? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
-    "What awards or recognitions has Weidert Group received as a HubSpot Partner? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
-    "Who are the leading B2B growth consultancies in the Midwest? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
-    "How can marketing and sales teams align around revenue growth? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
-    "What is a B2B demand generation system? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
-    "What are examples of successful HubSpot implementations in manufacturing? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
-    "How do HubSpot Partner agencies support industrial sales teams? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
-    "What’s the best way to generate qualified leads for a manufacturing company? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
-    "Who are the best marketing agencies in Appleton, WI? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
-    "What are the top HubSpot agencies in Wisconsin or the Midwest? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
-    "What are the top B2B marketing agencies with HubSpot accreditation? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
-    "Who are the top HubSpot partners for industrial companies? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
-    "What does it cost to work with a HubSpot Partner Agency? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
-    "Which HubSpot partner agencies have proven ROI for manufacturers? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
-    "How can AI tools improve content marketing and lead quality? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
-    "What is the best strategy for aligning marketing and sales in a manufacturing organization? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
-    "How does AI change demand generation for industrial companies? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
-    "What are examples of successful industrial HubSpot implementations? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
-    "How do B2B manufacturers use HubSpot for lead nurturing and automation? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
-    "How can inbound marketing reduce sales inefficiency in industrial companies? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
-    "How do industrial brands turn technical expertise into thought leadership? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
-    "What kind of marketing system helps shorten long B2B sales cycles? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'"
+    "What industries does Custom Processing Services serve? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
+    "How is Custom Processing Services different from other particle processing companies? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
+    "What particle size reduction services does Custom Processing Services provide? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
+    "What types of milling equipment does Custom Processing Services use? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
+    "Who are the leading particle processing companies? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
+    "What is toll processing for particle size reduction? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
+    "What is cryogenic grinding and who offers these services? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
+    "What are examples of successful particle processing projects? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
+    "How do particle processing companies support pharmaceutical development? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
+    "What's the best way to reduce particle size for specialty chemicals? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
+    "Who are the best custom milling companies in the US? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
+    "What are the top contract manufacturing companies for particle processing? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
+    "What companies offer jet milling services? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
+    "Who are the top toll processors for fine particle milling? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
+    "What does it cost to work with a contract milling company? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
+    "Which particle processing companies have proven quality certifications? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
+    "How can particle size distribution affect product performance? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
+    "What is the best strategy for selecting a contract milling partner? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
+    "How does micronization improve bioavailability in pharmaceuticals? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
+    "What are examples of successful custom milling projects? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
+    "How do companies use toll processing for specialty materials? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
+    "What are the benefits of using a contract processing partner? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
+    "How do particle processing companies ensure product quality and consistency? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'",
+    "What equipment is needed for ultrafine particle size reduction? -- Provide sources where you are extracting information from in this format - 'https?://\\S+'"
 ]
 
 
 # ─── QUERY TEMPLATES ─────────────────────────────────────────────────────────
 QUERY_TEMPLATES = {
-    "Agency Discovery": [
-        "B2B marketing agencies for industrial companies",
-        "HubSpot partner agencies in the US",
-        "Inbound marketing consultants for manufacturing",
-        "Marketing automation agencies for B2B",
-        "Revenue operations consulting firms"
+    "Service Discovery": [
+        "Particle processing companies for pharmaceuticals",
+        "Contract milling services in the US",
+        "Toll processing for specialty chemicals",
+        "Custom milling and grinding services",
+        "Particle size reduction consulting"
     ],
     "Industry Specific": [
-        "Marketing agency for engineering companies",
-        "B2B marketing for environmental services",
-        "Logistics company marketing consultants",
-        "Industrial manufacturing marketing experts",
-        "Technical B2B marketing specialists"
+        "Milling services for pharmaceutical companies",
+        "Particle processing for nutraceuticals",
+        "Chemical processing toll manufacturers",
+        "Food processing particle reduction",
+        "Cosmetic ingredient processing services"
     ],
     "Service Seeking": [
-        "HubSpot implementation and strategy",
-        "Sales and marketing alignment consulting",
-        "B2B lead generation services",
-        "Content marketing for technical products",
-        "Marketing ROI measurement and analytics"
+        "Jet milling and micronization services",
+        "Cryogenic grinding capabilities",
+        "Particle size analysis and testing",
+        "Contract manufacturing for powders",
+        "Ultrafine particle processing"
     ],
     "Comparison Queries": [
-        "Compare B2B marketing agencies",
-        "Best HubSpot partners for mid-market companies",
-        "Weidert Group vs other marketing agencies",
-        "Top inbound marketing agencies",
-        "Marketing agency selection criteria"
+        "Compare particle processing companies",
+        "Best contract milling companies",
+        "Custom Processing Services vs other toll processors",
+        "Top particle reduction service providers",
+        "Toll processing partner selection criteria"
     ],
     "Problem Solution": [
-        "How to align sales and marketing teams",
-        "Improve B2B lead quality and conversion",
-        "Marketing strategy for long sales cycles",
-        "Generate more qualified leads for industrial products",
-        "Measure marketing ROI for B2B services"
+        "How to reduce particle size for better dissolution",
+        "Improve powder flowability and handling",
+        "Processing strategy for heat-sensitive materials",
+        "Achieve consistent particle size distribution",
+        "Select the right milling technology"
     ]
 }
 
 # ─── COMPETITOR ANALYSIS SETUP ─────────────────────────────────────────────
 COMPETITORS = [
-    "Stream Creative", "New Breed Revenue", "New Breed", "Gorilla 76", 
-    "SmartBug Media", "SmartBug", "IMPACT", "Kuno Creative", 
-    "Impulse Creative", "Square 2 Marketing", "Revenue River"
+    "Custom Milling & Consulting, Inc.", "Custom Milling & Consulting", 
+    "Aveka", "A. Schulman, Inc.", "A. Schulman", "Schulman",
+    "Capsugel", "Fluid Energy Processing & Equipment Company", 
+    "Fluid Energy Processing", "Particle Size Technology"
 ]
 
 # ─── LOGO & HEADER ─────────────────────────────────────────────────────────────
 st.markdown("""
 <div style='text-align:center; padding:1rem 0;'>
-  <h1>🔍 Weidert Group LLM Search Visibility Tool</h1>
-  <h4 style='color:#666;'>AI-Powered Competitive Intelligence for B2B Industrial Marketing</h4>
+  <h1>🔍 Custom Processing Services (CPS) LLM Search Visibility Tool</h1>
+  <h4 style='color:#666;'>AI-Powered Competitive Intelligence for Particle Processing Services</h4>
   <p style='color:#999; font-size:0.9rem;'>Analyze brand visibility across ChatGPT, Gemini & Perplexity</p>
 </div>
 """, unsafe_allow_html=True)
@@ -329,7 +330,7 @@ def safe_sentence_tokenize(text):
         sentences = re.split(r'[.!?]+', str(text))
         return [s.strip() for s in sentences if s.strip()]
 
-def analyze_position(text, brand="Weidert"):
+def analyze_position(text, brand="CPS"):
     """Analyze where in the response the brand appears"""
     if not text or pd.isna(text) or text.startswith("ERROR"):
         return "Not Mentioned", 0, "N/A"
@@ -341,8 +342,8 @@ def analyze_position(text, brand="Weidert"):
     if total_sentences == 0:
         return "Not Mentioned", 0, "N/A"
     
-    # Check for both "Weidert" and "Weidert Group"
-    brand_patterns = [brand.lower(), "weidert group"]
+    # Check for both "CPS" and "Custom Processing Services"
+    brand_patterns = [brand.lower(), "custom processing services", "custom processing"]
     
     for i, sentence in enumerate(sentences):
         sentence_lower = sentence.lower()
@@ -357,13 +358,13 @@ def analyze_position(text, brand="Weidert"):
     
     return "Not Mentioned", 0, "N/A"
 
-def analyze_context(text, brand="Weidert"):
+def analyze_context(text, brand="CPS"):
     """Analyze the context around brand mentions"""
     if not text or pd.isna(text) or text.startswith("ERROR"):
         return "Not Mentioned", 0, []
     
     text_str = str(text)
-    brand_patterns = [brand.lower(), "weidert group"]
+    brand_patterns = [brand.lower(), "custom processing services", "custom processing"]
     
     if not any(pattern in text_str.lower() for pattern in brand_patterns):
         return "Not Mentioned", 0, []
@@ -466,7 +467,7 @@ def upload_to_google_sheets(df, spreadsheet_url=None):
                 return False, f"Could not open spreadsheet at URL: {spreadsheet_url}\n\nError: {str(e)}\n\nMake sure you've shared this sheet with: {creds_dict.get('client_email', 'the service account')}"
         else:
             # Use master sheet approach
-            master_sheet_name = "Weidert LLM Results - Master"
+            master_sheet_name = "CPS LLM Results - Master"
             
             try:
                 # Try to open existing master sheet
@@ -478,7 +479,7 @@ def upload_to_google_sheets(df, spreadsheet_url=None):
 
 OPTION 1 - Create in your own Google Drive (RECOMMENDED):
 1. Go to Google Sheets: https://sheets.google.com
-2. Create a new spreadsheet named "Weidert LLM Results - Master" (or any name)
+2. Create a new spreadsheet named "CPS LLM Results - Master" (or any name)
 3. Share it with: {creds_dict.get('client_email', 'the service account')}
 4. Give it "Editor" permissions
 5. Copy the URL and paste it in the text box below the upload button
@@ -589,13 +590,13 @@ def load_data_from_google_sheets(spreadsheet_url):
                 df['Upload_Date'] = pd.to_datetime(df['Upload_Date'], errors='coerce')
             
             # Convert numeric columns
-            numeric_columns = ['Response_Time', 'Weidert_Sentence_Num']
+            numeric_columns = ['Response_Time', 'CPS_Sentence_Num']
             for col in numeric_columns:
                 if col in df.columns:
                     df[col] = pd.to_numeric(df[col], errors='coerce')
             
             # Convert boolean columns (handle various string formats from Google Sheets)
-            bool_columns = ['Branded_Query', 'Weidert_Mentioned', 'Weidert_URL_Cited']
+            bool_columns = ['Branded_Query', 'CPS_Mentioned', 'CPS_URL_Cited']
             for col in bool_columns:
                 if col in df.columns:
                     # Convert string booleans to actual booleans (case-insensitive)
@@ -760,12 +761,12 @@ with tab1:
             df['Date'] = datetime.now().date()
             
             # Add analytics
-            position_analysis = df['Response'].apply(lambda x: analyze_position(x, "Weidert"))
-            df['Weidert_Position'] = [p[0] for p in position_analysis]
-            df['Weidert_Sentence_Num'] = [p[1] for p in position_analysis]
-            df['Weidert_Position_Pct'] = [p[2] for p in position_analysis]
+            position_analysis = df['Response'].apply(lambda x: analyze_position(x, "CPS"))
+            df['CPS_Position'] = [p[0] for p in position_analysis]
+            df['CPS_Sentence_Num'] = [p[1] for p in position_analysis]
+            df['CPS_Position_Pct'] = [p[2] for p in position_analysis]
             
-            context_analysis = df['Response'].apply(lambda x: analyze_context(x, "Weidert"))
+            context_analysis = df['Response'].apply(lambda x: analyze_context(x, "CPS"))
             df['Context_Type'] = [c[0] for c in context_analysis]
             df['Context_Sentiment'] = [c[1] for c in context_analysis]
             
@@ -773,14 +774,14 @@ with tab1:
             df['Competitors_Found'] = [', '.join(c[0]) if c[0] else '' for c in competitor_analysis]
             
             # Additional columns
-            df['Branded_Query'] = df['Query'].str.contains('weidert', case=False, na=False)
-            df['Weidert_Mentioned'] = df['Response'].apply(
-                lambda x: 'weidert' in str(x).lower() and not str(x).startswith("ERROR")
+            df['Branded_Query'] = df['Query'].str.contains('cps|custom processing', case=False, na=False)
+            df['CPS_Mentioned'] = df['Response'].apply(
+                lambda x: ('cps' in str(x).lower() or 'custom processing' in str(x).lower()) and not str(x).startswith("ERROR")
             )
             df['Sources_Cited'] = df['Response'].apply(
                 lambda x: ', '.join(re.findall(r'https?://\S+', str(x))) if not str(x).startswith("ERROR") else ''
             )
-            df['Weidert_URL_Cited'] = df['Sources_Cited'].str.contains('weidert.com', case=False, na=False)
+            df['CPS_URL_Cited'] = df['Sources_Cited'].str.contains('cps-processing.com', case=False, na=False)
             
             # Store in session state
             st.session_state.latest_results = df
@@ -797,15 +798,15 @@ with tab1:
         col1, col2, col3, col4 = st.columns(4)
         
         with col1:
-            mention_rate = (df['Weidert_Mentioned'].sum() / len(df) * 100)
-            st.metric("Weidert Mention Rate", f"{mention_rate:.1f}%")
+            mention_rate = (df['CPS_Mentioned'].sum() / len(df) * 100)
+            st.metric("CPS Mention Rate", f"{mention_rate:.1f}%")
         
         with col2:
             avg_response_time = df['Response_Time'].mean()
             st.metric("Avg Response Time", f"{avg_response_time:.1f}s")
         
         with col3:
-            first_position_rate = (df['Weidert_Position'] == 'First Third').sum() / len(df) * 100
+            first_position_rate = (df['CPS_Position'] == 'First Third').sum() / len(df) * 100
             st.metric("First Third Mentions", f"{first_position_rate:.1f}%")
         
         with col4:
@@ -814,7 +815,7 @@ with tab1:
         
         # Detailed table
         st.subheader("📋 Detailed Results")
-        display_cols = ['Query', 'Source', 'Response', 'Response_Time', 'Weidert_Position', 'Context_Type']
+        display_cols = ['Query', 'Source', 'Response', 'Response_Time', 'CPS_Position', 'Context_Type']
         st.dataframe(df[display_cols], use_container_width=True, height=400)
         
         # Download and Upload buttons
@@ -824,7 +825,7 @@ with tab1:
             st.download_button(
                 "📥 Download Results (CSV)",
                 df.to_csv(index=False),
-                "weidert_llm_results.csv",
+                "cps_llm_results.csv",
                 "text/csv"
             )
         
@@ -868,29 +869,29 @@ with tab2:
     
     if df_main is not None:
         # Ensure all necessary columns exist
-        if 'Weidert_Position' not in df_main.columns:
-            position_analysis = df_main['Response'].apply(lambda x: analyze_position(x, "Weidert"))
-            df_main['Weidert_Position'] = [p[0] for p in position_analysis]
+        if 'CPS_Position' not in df_main.columns:
+            position_analysis = df_main['Response'].apply(lambda x: analyze_position(x, "CPS"))
+            df_main['CPS_Position'] = [p[0] for p in position_analysis]
         
         if 'Context_Type' not in df_main.columns:
-            context_analysis = df_main['Response'].apply(lambda x: analyze_context(x, "Weidert"))
+            context_analysis = df_main['Response'].apply(lambda x: analyze_context(x, "CPS"))
             df_main['Context_Type'] = [c[0] for c in context_analysis]
         
         if 'Competitors_Found' not in df_main.columns:
             competitor_analysis = df_main['Response'].apply(extract_competitors_detailed)
             df_main['Competitors_Found'] = [', '.join(c[0]) if c[0] else '' for c in competitor_analysis]
         
-        if 'Weidert_Mentioned' not in df_main.columns:
-            df_main['Weidert_Mentioned'] = df_main['Response'].apply(
-                lambda x: 'weidert' in str(x).lower() and not str(x).startswith("ERROR")
+        if 'CPS_Mentioned' not in df_main.columns:
+            df_main['CPS_Mentioned'] = df_main['Response'].apply(
+                lambda x: ('cps' in str(x).lower() or 'custom processing' in str(x).lower()) and not str(x).startswith("ERROR")
             )
         
         if 'Branded_Query' not in df_main.columns:
-            df_main['Branded_Query'] = df_main['Query'].str.contains('weidert', case=False, na=False)
+            df_main['Branded_Query'] = df_main['Query'].str.contains('cps|custom processing', case=False, na=False)
         
         # Traditional Mention Rates
         st.subheader("📊 Mention Rates by Source")
-        overall_rate = df_main.groupby('Source')['Weidert_Mentioned'].apply(
+        overall_rate = df_main.groupby('Source')['CPS_Mentioned'].apply(
             lambda x: (x.sum() / len(x) * 100)
         ).round(1)
         
@@ -903,14 +904,14 @@ with tab2:
         # Branded vs Non-Branded
         st.subheader("🎯 Branded vs. Non-Branded Query Performance")
         
-        branded_analysis = df_main.groupby(['Source', 'Branded_Query'])['Weidert_Mentioned'].apply(
+        branded_analysis = df_main.groupby(['Source', 'Branded_Query'])['CPS_Mentioned'].apply(
             lambda x: (x.sum() / len(x) * 100)
         ).unstack(fill_value=0).round(1)
         
         if len(branded_analysis.columns) == 2:
             branded_analysis.columns = ['Non-Branded', 'Branded']
         
-        fig = px.bar(branded_analysis.T, title="Weidert Mention Rate: Branded vs Non-Branded",
+        fig = px.bar(branded_analysis.T, title="CPS Mention Rate: Branded vs Non-Branded",
                     labels={'value': 'Mention Rate (%)'}, barmode='group')
         st.plotly_chart(fig, use_container_width=True)
         
@@ -922,13 +923,13 @@ with tab2:
         col1, col2 = st.columns(2)
         
         with col1:
-            position_counts = df_main['Weidert_Position'].value_counts()
+            position_counts = df_main['CPS_Position'].value_counts()
             fig = px.pie(values=position_counts.values, names=position_counts.index,
-                        title="Weidert Mention Position Distribution")
+                        title="CPS Mention Position Distribution")
             st.plotly_chart(fig, use_container_width=True)
         
         with col2:
-            position_by_source = df_main.groupby(['Source', 'Weidert_Position']).size().unstack(fill_value=0)
+            position_by_source = df_main.groupby(['Source', 'CPS_Position']).size().unstack(fill_value=0)
             fig = px.bar(position_by_source, title="Position by Source", barmode='stack')
             st.plotly_chart(fig, use_container_width=True)
         
@@ -953,12 +954,12 @@ with tab2:
         
         st.divider()
         
-        # NEW SECTION: Simple list of queries without Weidert mentions
-        st.subheader("⚠️ Queries Without Weidert Mentions")
-        st.caption("Quick reference list of queries where Weidert was not mentioned")
+        # NEW SECTION: Simple list of queries without CPS mentions
+        st.subheader("⚠️ Queries Without CPS Mentions")
+        st.caption("Quick reference list of queries where CPS was not mentioned")
         
-        # Filter for responses where Weidert was NOT mentioned
-        negative_results = df_main[~df_main['Weidert_Mentioned']].copy()
+        # Filter for responses where CPS was NOT mentioned
+        negative_results = df_main[~df_main['CPS_Mentioned']].copy()
         
         if len(negative_results) > 0:
             # Simple summary metric
@@ -966,24 +967,24 @@ with tab2:
             negative_pct = (negative_count / len(df_main) * 100)
             unique_queries_missing = negative_results['Query'].nunique()
             
-            st.warning(f"⚠️ **{negative_count} responses** ({negative_pct:.1f}%) across **{unique_queries_missing} unique queries** did not mention Weidert Group")
+            st.warning(f"⚠️ **{negative_count} responses** ({negative_pct:.1f}%) across **{unique_queries_missing} unique queries** did not mention Custom Processing Services (CPS)")
             
             # Simple table view of queries and their LLM sources
             st.markdown("### 📋 List of Affected Queries")
             
-            # Group by query and show which LLMs didn't mention Weidert
+            # Group by query and show which LLMs didn't mention CPS
             query_summary = []
             for query in negative_results['Query'].unique():
                 query_negs = negative_results[negative_results['Query'] == query]
                 sources_missing = ', '.join(query_negs['Source'].tolist())
                 
-                # Check if any LLM mentioned Weidert for this query
+                # Check if any LLM mentioned CPS for this query
                 all_query_responses = df_main[df_main['Query'] == query]
-                any_mentioned = all_query_responses['Weidert_Mentioned'].any()
+                any_mentioned = all_query_responses['CPS_Mentioned'].any()
                 
                 query_summary.append({
                     'Query': query,
-                    'LLMs Missing Weidert': sources_missing,
+                    'LLMs Missing CPS': sources_missing,
                     'Status': 'Partial' if any_mentioned else 'Complete Gap'
                 })
             
@@ -1002,7 +1003,7 @@ with tab2:
                 height=400
             )
             
-            st.caption("🔴 **Complete Gap** = Weidert not mentioned by ANY LLM | 🟡 **Partial** = Mentioned by some LLMs but not all")
+            st.caption("🔴 **Complete Gap** = CPS not mentioned by ANY LLM | 🟡 **Partial** = Mentioned by some LLMs but not all")
             
             st.markdown("---")
             
@@ -1021,12 +1022,12 @@ with tab2:
             responses_with_sources = has_sources.sum()
             citation_rate = (responses_with_sources / len(df_main) * 100)
             
-            # Weidert URL citation
-            if 'Weidert_URL_Cited' not in df_main.columns:
-                df_main['Weidert_URL_Cited'] = df_main['Sources_Cited'].str.contains('weidert.com', case=False, na=False)
+            # CPS URL citation
+            if 'CPS_URL_Cited' not in df_main.columns:
+                df_main['CPS_URL_Cited'] = df_main['Sources_Cited'].str.contains('cps-processing.com', case=False, na=False)
             
-            weidert_url_citations = df_main['Weidert_URL_Cited'].sum()
-            weidert_url_rate = (weidert_url_citations / len(df_main) * 100)
+            cps_url_citations = df_main['CPS_URL_Cited'].sum()
+            cps_url_rate = (cps_url_citations / len(df_main) * 100)
             
             # Summary metrics
             col1, col2, col3, col4 = st.columns(4)
@@ -1036,8 +1037,8 @@ with tab2:
                          f"{citation_rate:.1f}%")
             
             with col2:
-                st.metric("Weidert.com Citations", f"{weidert_url_citations}", 
-                         f"{weidert_url_rate:.1f}%")
+                st.metric("CPS Website Citations", f"{cps_url_citations}", 
+                         f"{cps_url_rate:.1f}%")
             
             with col3:
                 # Average sources per response
@@ -1048,10 +1049,10 @@ with tab2:
                 st.metric("Avg Sources per Response", f"{avg_sources:.1f}")
             
             with col4:
-                # Weidert URL citation when mentioned
-                weidert_mentioned_df = df_main[df_main['Weidert_Mentioned']]
-                if len(weidert_mentioned_df) > 0:
-                    url_when_mentioned = (weidert_mentioned_df['Weidert_URL_Cited'].sum() / len(weidert_mentioned_df) * 100)
+                # CPS URL citation when mentioned
+                cps_mentioned_df = df_main[df_main['CPS_Mentioned']]
+                if len(cps_mentioned_df) > 0:
+                    url_when_mentioned = (cps_mentioned_df['CPS_URL_Cited'].sum() / len(cps_mentioned_df) * 100)
                     st.metric("URL When Mentioned", f"{url_when_mentioned:.1f}%")
                 else:
                     st.metric("URL When Mentioned", "N/A")
@@ -1077,17 +1078,17 @@ with tab2:
                 st.plotly_chart(fig, use_container_width=True)
             
             with col2:
-                st.markdown("#### 🌐 Weidert.com Citation by LLM")
-                weidert_citation_by_source = df_main.groupby('Source').apply(
-                    lambda x: (x['Weidert_URL_Cited'].sum() / len(x) * 100)
+                st.markdown("#### 🌐 CPS Website Citation by LLM")
+                cps_citation_by_source = df_main.groupby('Source').apply(
+                    lambda x: (x['CPS_URL_Cited'].sum() / len(x) * 100)
                 ).round(1)
                 
-                fig = px.bar(x=weidert_citation_by_source.index, y=weidert_citation_by_source.values,
-                           title='Weidert.com Citation Rate',
+                fig = px.bar(x=cps_citation_by_source.index, y=cps_citation_by_source.values,
+                           title='CPS Website Citation Rate',
                            labels={'x': 'LLM Source', 'y': 'Citation Rate (%)'},
-                           color=weidert_citation_by_source.values,
+                           color=cps_citation_by_source.values,
                            color_continuous_scale='Greens',
-                           text=weidert_citation_by_source.values)
+                           text=cps_citation_by_source.values)
                 fig.update_traces(textposition='outside')
                 st.plotly_chart(fig, use_container_width=True)
             
@@ -1120,8 +1121,8 @@ with tab2:
                 if domains:
                     domain_counts = pd.Series(domains).value_counts().head(15)
                     
-                    # Highlight Weidert domain
-                    colors = ['#28a745' if 'weidert.com' in domain else '#6c757d' for domain in domain_counts.index]
+                    # Highlight CPS domain
+                    colors = ['#28a745' if 'cps-processing.com' in domain else '#6c757d' for domain in domain_counts.index]
                     
                     fig = px.bar(x=domain_counts.values, y=domain_counts.index, orientation='h',
                                title='Top 15 Most Cited Domains',
@@ -1131,19 +1132,19 @@ with tab2:
                     fig.update_layout(showlegend=False, height=500)
                     st.plotly_chart(fig, use_container_width=True)
                     
-                    st.caption("🟢 Green = Weidert.com | ⚫ Gray = Other domains")
+                    st.caption("🟢 Green = CPS Website | ⚫ Gray = Other domains")
                     
-                    # Show if Weidert is in top domains
-                    weidert_rank = None
+                    # Show if CPS is in top domains
+                    cps_rank = None
                     for rank, (domain, count) in enumerate(domain_counts.items(), 1):
-                        if 'weidert.com' in domain:
-                            weidert_rank = rank
+                        if 'cps-processing.com' in domain:
+                            cps_rank = rank
                             break
                     
-                    if weidert_rank:
-                        st.success(f"✅ Weidert.com ranks **#{weidert_rank}** among cited domains with **{domain_counts['weidert.com']} citations**")
+                    if cps_rank:
+                        st.success(f"✅ CPS Website ranks **#{cps_rank}** among cited domains with **{domain_counts.iloc[cps_rank-1]} citations**")
                     else:
-                        st.warning("⚠️ Weidert.com does not appear in the top 15 cited domains")
+                        st.warning("⚠️ CPS Website does not appear in the top 15 cited domains")
                 else:
                     st.info("No valid domains found in cited sources")
             else:
@@ -1153,7 +1154,7 @@ with tab2:
             
             # Detailed source breakdown by query (for negative results)
             st.markdown("#### 🔍 Sources Cited in Negative Results")
-            st.caption("What sources are LLMs citing when they DON'T mention Weidert?")
+            st.caption("What sources are LLMs citing when they DON'T mention CPS?")
             
             negative_with_sources = negative_results[negative_results['Sources_Cited'].apply(lambda x: len(str(x)) > 0 and str(x) != '')]
             
@@ -1181,7 +1182,7 @@ with tab2:
                     negative_domain_counts = pd.Series(negative_domains).value_counts().head(10)
                     
                     fig = px.bar(x=negative_domain_counts.values, y=negative_domain_counts.index, orientation='h',
-                               title='Top 10 Domains Cited When Weidert NOT Mentioned',
+                               title='Top 10 Domains Cited When CPS NOT Mentioned',
                                labels={'x': 'Number of Citations', 'y': 'Domain'},
                                color=negative_domain_counts.values,
                                color_continuous_scale='Reds',
@@ -1198,7 +1199,7 @@ with tab2:
             
             # Detailed Query Breakdown - SHOW ALL 3 LLM RESPONSES
             st.markdown("### 🔍 Detailed Query-by-Query Breakdown")
-            st.caption("Expandable view showing ALL LLM responses for each query (highlighting which didn't mention Weidert)")
+            st.caption("Expandable view showing ALL LLM responses for each query (highlighting which didn't mention CPS)")
             
             unique_queries = negative_results['Query'].unique()
             
@@ -1206,8 +1207,8 @@ with tab2:
                 # Get ALL responses for this query (not just negatives)
                 query_data = df_main[df_main['Query'] == query]
                 
-                # Check if ANY LLM mentioned Weidert for this query
-                any_mentioned = query_data['Weidert_Mentioned'].any()
+                # Check if ANY LLM mentioned CPS for this query
+                any_mentioned = query_data['CPS_Mentioned'].any()
                 
                 # Status indicator
                 if any_mentioned:
@@ -1225,12 +1226,12 @@ with tab2:
                     
                     # Status message
                     if any_mentioned:
-                        mentioned_by = query_data[query_data['Weidert_Mentioned']]['Source'].tolist()
-                        not_mentioned_by = query_data[~query_data['Weidert_Mentioned']]['Source'].tolist()
-                        st.info(f"✅ **Weidert mentioned by:** {', '.join(mentioned_by)}")
+                        mentioned_by = query_data[query_data['CPS_Mentioned']]['Source'].tolist()
+                        not_mentioned_by = query_data[~query_data['CPS_Mentioned']]['Source'].tolist()
+                        st.info(f"✅ **CPS mentioned by:** {', '.join(mentioned_by)}")
                         st.warning(f"❌ **Missing from:** {', '.join(not_mentioned_by)}")
                     else:
-                        st.error("🔴 **CRITICAL**: Weidert NOT mentioned by ANY LLM for this query!")
+                        st.error("🔴 **CRITICAL**: CPS NOT mentioned by ANY LLM for this query!")
                     
                     st.markdown("---")
                     
@@ -1241,11 +1242,11 @@ with tab2:
                         col_idx = idx % 3
                         
                         with cols[col_idx]:
-                            # Determine if Weidert was mentioned in this response
-                            weidert_mentioned = row['Weidert_Mentioned']
+                            # Determine if CPS was mentioned in this response
+                            cps_mentioned = row['CPS_Mentioned']
                             
                             # Header with color coding
-                            if weidert_mentioned:
+                            if cps_mentioned:
                                 header_color = "#28a745"  # Green
                                 status_badge = "✅ Mentioned"
                             else:
@@ -1271,9 +1272,9 @@ with tab2:
                             preview_text = response_text[:300] + "..." if len(response_text) > 300 else response_text
                             st.markdown(f"**Preview:** {preview_text}")
                             
-                            # Show position if Weidert was mentioned
-                            if weidert_mentioned and 'Weidert_Position' in row:
-                                st.success(f"📍 **Position:** {row['Weidert_Position']}")
+                            # Show position if CPS was mentioned
+                            if cps_mentioned and 'CPS_Position' in row:
+                                st.success(f"📍 **Position:** {row['CPS_Position']}")
                                 if 'Context_Type' in row:
                                     context = row['Context_Type']
                                     context_icon = "😊" if context == "Positive" else "😐" if context == "Neutral" else "😟"
@@ -1294,13 +1295,13 @@ with tab2:
             st.download_button(
                 "📥 Download Negative Results (CSV)",
                 negative_results.to_csv(index=False),
-                "weidert_queries_without_mentions.csv",
+                "cps_queries_without_mentions.csv",
                 "text/csv",
-                help="Download all responses where Weidert was not mentioned"
+                help="Download all responses where CPS was not mentioned"
             )
         
         else:
-            st.success("🎉 **Excellent!** Weidert Group was mentioned in ALL query responses!")
+            st.success("🎉 **Excellent!** Custom Processing Services was mentioned in ALL query responses!")
         
         st.divider()
         
@@ -1309,7 +1310,7 @@ with tab2:
         st.download_button(
             "Download Complete Analysis CSV",
             df_main.to_csv(index=False),
-            "weidert_visibility_analysis.csv",
+            "cps_visibility_analysis.csv",
             "text/csv"
         )
 
@@ -1317,7 +1318,7 @@ with tab2:
 # ─── TAB 3: COMPETITOR COMPARISON ─────────────────────────────────────────────
 with tab3:
     st.markdown("### 🏆 Competitor Comparison")
-    st.caption("Head-to-head analysis comparing Weidert Group against key competitors")
+    st.caption("Head-to-head analysis comparing Custom Processing Services against key competitors")
     
     data_source = st.radio(
         "Choose data source:",
@@ -1331,15 +1332,15 @@ with tab3:
             
             selected_competitors = st.multiselect(
                 "Select Competitors to Analyze:",
-                ["Weidert Group"] + COMPETITORS,
-                default=["Weidert Group", "Stream Creative", "New Breed Revenue", "SmartBug Media"]
+                ["Custom Processing Services (CPS)"] + COMPETITORS,
+                default=["Custom Processing Services (CPS)", "Aveka", "Capsugel", "Particle Size Technology"]
             )
             
             if st.button("🔍 Analyze Competitors", key="analyze_existing"):
                 competitor_analysis = {}
                 
                 for competitor in selected_competitors:
-                    search_term = "weidert" if competitor == "Weidert Group" else competitor.lower()
+                    search_term = "cps|custom processing" if competitor == "Custom Processing Services (CPS)" else competitor.lower()
                     mentions = df_comp['Response'].apply(
                         lambda x: search_term in str(x).lower() and not str(x).startswith("ERROR")
                     )
@@ -1369,17 +1370,17 @@ with tab3:
                     use_container_width=True
                 )
                 
-                # Show Weidert's rank
-                if 'Weidert Group' in comparison_df.index:
-                    weidert_rank = comparison_df.loc['Weidert Group', 'Overall Rank']
+                # Show CPS's rank
+                if 'Custom Processing Services (CPS)' in comparison_df.index:
+                    cps_rank = comparison_df.loc['Custom Processing Services (CPS)', 'Overall Rank']
                     total_competitors = len(comparison_df)
                     
-                    if weidert_rank == 1:
-                        st.success(f"🥇 **Weidert Group ranks #1** out of {total_competitors} competitors!")
-                    elif weidert_rank <= 3:
-                        st.info(f"🥈 **Weidert Group ranks #{int(weidert_rank)}** out of {total_competitors} competitors")
+                    if cps_rank == 1:
+                        st.success(f"🥇 **Custom Processing Services (CPS) ranks #1** out of {total_competitors} competitors!")
+                    elif cps_rank <= 3:
+                        st.info(f"🥈 **Custom Processing Services (CPS) ranks #{int(cps_rank)}** out of {total_competitors} competitors")
                     else:
-                        st.warning(f"📊 **Weidert Group ranks #{int(weidert_rank)}** out of {total_competitors} competitors")
+                        st.warning(f"📊 **Custom Processing Services (CPS) ranks #{int(cps_rank)}** out of {total_competitors} competitors")
                 
                 st.divider()
                 
@@ -1423,7 +1424,7 @@ with tab3:
                 
                 # NEW: Win/Loss Analysis
                 st.subheader("⚔️ Win/Loss Analysis")
-                st.caption("Query-by-query breakdown: Where Weidert wins vs loses to competitors")
+                st.caption("Query-by-query breakdown: Where CPS wins vs loses to competitors")
                 
                 # Analyze each query
                 win_loss_data = []
@@ -1432,13 +1433,13 @@ with tab3:
                     query_data = df_comp[df_comp['Query'] == query]
                     
                     # Check who appears in this query
-                    weidert_appears = any(query_data['Response'].apply(
-                        lambda x: 'weidert' in str(x).lower() and not str(x).startswith("ERROR")
+                    cps_appears = any(query_data['Response'].apply(
+                        lambda x: ('cps' in str(x).lower() or 'custom processing' in str(x).lower()) and not str(x).startswith("ERROR")
                     ))
                     
                     competitors_appear = []
                     for comp in selected_competitors:
-                        if comp != "Weidert Group":
+                        if comp != "Custom Processing Services (CPS)":
                             comp_appears = any(query_data['Response'].apply(
                                 lambda x: comp.lower() in str(x).lower() and not str(x).startswith("ERROR")
                             ))
@@ -1446,11 +1447,11 @@ with tab3:
                                 competitors_appear.append(comp)
                     
                     # Classify outcome
-                    if weidert_appears and not competitors_appear:
-                        outcome = "🟢 Win (Weidert Only)"
-                    elif weidert_appears and competitors_appear:
+                    if cps_appears and not competitors_appear:
+                        outcome = "🟢 Win (CPS Only)"
+                    elif cps_appears and competitors_appear:
                         outcome = "🟡 Tie (Both Appear)"
-                    elif not weidert_appears and competitors_appear:
+                    elif not cps_appears and competitors_appear:
                         outcome = "🔴 Loss (Competitor Only)"
                     else:
                         outcome = "⚪ Neither"
@@ -1466,7 +1467,7 @@ with tab3:
                 # Summary counts
                 col1, col2, col3, col4 = st.columns(4)
                 
-                wins = (win_loss_df['Outcome'] == '🟢 Win (Weidert Only)').sum()
+                wins = (win_loss_df['Outcome'] == '🟢 Win (CPS Only)').sum()
                 ties = (win_loss_df['Outcome'] == '🟡 Tie (Both Appear)').sum()
                 losses = (win_loss_df['Outcome'] == '🔴 Loss (Competitor Only)').sum()
                 neither = (win_loss_df['Outcome'] == '⚪ Neither').sum()
@@ -1490,43 +1491,43 @@ with tab3:
                 
                 # NEW: Co-occurrence Matrix
                 st.subheader("🔗 Co-Mention Analysis")
-                st.caption("How often competitors appear together with Weidert in the same responses")
+                st.caption("How often competitors appear together with CPS in the same responses")
                 
                 co_mention_matrix = []
                 
                 for comp in selected_competitors:
-                    if comp == "Weidert Group":
+                    if comp == "Custom Processing Services (CPS)":
                         continue
                     
-                    # Count queries where both Weidert and this competitor appear
+                    # Count queries where both CPS and this competitor appear
                     both_count = 0
-                    weidert_only = 0
+                    cps_only = 0
                     comp_only = 0
                     
                     for query in df_comp['Query'].unique():
                         query_data = df_comp[df_comp['Query'] == query]
                         
-                        weidert_in_query = any(query_data['Response'].apply(
-                            lambda x: 'weidert' in str(x).lower() and not str(x).startswith("ERROR")
+                        cps_in_query = any(query_data['Response'].apply(
+                            lambda x: ('cps' in str(x).lower() or 'custom processing' in str(x).lower()) and not str(x).startswith("ERROR")
                         ))
                         
                         comp_in_query = any(query_data['Response'].apply(
                             lambda x: comp.lower() in str(x).lower() and not str(x).startswith("ERROR")
                         ))
                         
-                        if weidert_in_query and comp_in_query:
+                        if cps_in_query and comp_in_query:
                             both_count += 1
-                        elif weidert_in_query:
-                            weidert_only += 1
+                        elif cps_in_query:
+                            cps_only += 1
                         elif comp_in_query:
                             comp_only += 1
                     
                     co_mention_matrix.append({
                         'Competitor': comp,
                         'Both Mentioned': both_count,
-                        'Weidert Only': weidert_only,
+                        'CPS Only': cps_only,
                         'Competitor Only': comp_only,
-                        'Co-Mention Rate (%)': round(both_count / max(both_count + weidert_only + comp_only, 1) * 100, 1)
+                        'Co-Mention Rate (%)': round(both_count / max(both_count + cps_only + comp_only, 1) * 100, 1)
                     })
                 
                 co_mention_df = pd.DataFrame(co_mention_matrix)
@@ -1536,7 +1537,7 @@ with tab3:
                     
                     # Visualize co-mention rates
                     fig = px.bar(co_mention_df, x='Competitor', y='Co-Mention Rate (%)',
-                               title='How Often Competitors Appear WITH Weidert',
+                               title='How Often Competitors Appear WITH CPS',
                                color='Co-Mention Rate (%)',
                                color_continuous_scale='Bluered',
                                text='Co-Mention Rate (%)')
@@ -1549,10 +1550,10 @@ with tab3:
                 
                 # NEW: Competitive Strengths & Weaknesses
                 st.subheader("💪 Competitive Strengths & Weaknesses")
-                st.caption("Where Weidert outperforms vs underperforms against selected competitors")
+                st.caption("Where CPS outperforms vs underperforms against selected competitors")
                 
-                if 'Weidert Group' in comparison_df.index:
-                    weidert_metrics = comparison_df.loc['Weidert Group']
+                if 'Custom Processing Services (CPS)' in comparison_df.index:
+                    cps_metrics = comparison_df.loc['Custom Processing Services (CPS)']
                     
                     col1, col2 = st.columns(2)
                     
@@ -1562,15 +1563,15 @@ with tab3:
                         
                         # Check each metric
                         for metric in ['Mention Rate (%)', 'First Third (%)', 'Positive Context (%)']:
-                            weidert_value = weidert_metrics[metric]
-                            competitor_values = [comparison_df.loc[comp, metric] for comp in selected_competitors if comp != 'Weidert Group']
+                            cps_value = cps_metrics[metric]
+                            competitor_values = [comparison_df.loc[comp, metric] for comp in selected_competitors if comp != 'Custom Processing Services (CPS)']
                             
                             if competitor_values:
                                 avg_competitor = sum(competitor_values) / len(competitor_values)
                                 
-                                if weidert_value > avg_competitor:
-                                    diff = weidert_value - avg_competitor
-                                    strengths.append(f"**{metric}**: {weidert_value:.1f}% (↑ {diff:.1f}% above avg)")
+                                if cps_value > avg_competitor:
+                                    diff = cps_value - avg_competitor
+                                    strengths.append(f"**{metric}**: {cps_value:.1f}% (↑ {diff:.1f}% above avg)")
                         
                         if strengths:
                             for strength in strengths:
@@ -1584,15 +1585,15 @@ with tab3:
                         
                         # Check each metric
                         for metric in ['Mention Rate (%)', 'First Third (%)', 'Positive Context (%)']:
-                            weidert_value = weidert_metrics[metric]
-                            competitor_values = [comparison_df.loc[comp, metric] for comp in selected_competitors if comp != 'Weidert Group']
+                            cps_value = cps_metrics[metric]
+                            competitor_values = [comparison_df.loc[comp, metric] for comp in selected_competitors if comp != 'Custom Processing Services (CPS)']
                             
                             if competitor_values:
                                 avg_competitor = sum(competitor_values) / len(competitor_values)
                                 
-                                if weidert_value < avg_competitor:
-                                    diff = avg_competitor - weidert_value
-                                    weaknesses.append(f"**{metric}**: {weidert_value:.1f}% (↓ {diff:.1f}% below avg)")
+                                if cps_value < avg_competitor:
+                                    diff = avg_competitor - cps_value
+                                    weaknesses.append(f"**{metric}**: {cps_value:.1f}% (↓ {diff:.1f}% below avg)")
                         
                         if weaknesses:
                             for weakness in weaknesses:
@@ -1633,7 +1634,7 @@ with tab3:
                 st.download_button(
                     "📥 Download Competitor Analysis (CSV)",
                     comparison_df.to_csv(),
-                    "weidert_competitor_comparison.csv",
+                    "cps_competitor_comparison.csv",
                     "text/csv"
                 )
         else:
@@ -1673,7 +1674,7 @@ with tab3:
 # ─── TAB 4: GAP ANALYSIS & OPPORTUNITIES ─────────────────────────────────────
 with tab4:
     st.markdown("### 🎯 Gap Analysis & Strategic Opportunities")
-    st.caption("Understand where Weidert is missing and develop targeted content strategies to close visibility gaps")
+    st.caption("Understand where CPS is missing and develop targeted content strategies to close visibility gaps")
     
     gap_file = st.file_uploader("Upload results CSV", type="csv", key="gap_upload_tab4")
     
@@ -1689,9 +1690,9 @@ with tab4:
     
     if df_gap is not None:
         # Ensure necessary columns
-        if 'Weidert_Mentioned' not in df_gap.columns:
-            df_gap['Weidert_Mentioned'] = df_gap['Response'].apply(
-                lambda x: 'weidert' in str(x).lower() and not str(x).startswith("ERROR")
+        if 'CPS_Mentioned' not in df_gap.columns:
+            df_gap['CPS_Mentioned'] = df_gap['Response'].apply(
+                lambda x: ('cps' in str(x).lower() or 'custom processing' in str(x).lower()) and not str(x).startswith("ERROR")
             )
         
         if 'Competitors_Found' not in df_gap.columns:
@@ -1701,14 +1702,14 @@ with tab4:
         df_gap['Has_Competitors'] = df_gap['Competitors_Found'].apply(lambda x: len(str(x)) > 0 and str(x) != '')
         
         # Calculate categories
-        weidert_only = df_gap[df_gap['Weidert_Mentioned'] & ~df_gap['Has_Competitors']]
-        competitors_only = df_gap[~df_gap['Weidert_Mentioned'] & df_gap['Has_Competitors']]
-        both_mentioned = df_gap[df_gap['Weidert_Mentioned'] & df_gap['Has_Competitors']]
-        neither_mentioned = df_gap[~df_gap['Weidert_Mentioned'] & ~df_gap['Has_Competitors']]
+        cps_only = df_gap[df_gap['CPS_Mentioned'] & ~df_gap['Has_Competitors']]
+        competitors_only = df_gap[~df_gap['CPS_Mentioned'] & df_gap['Has_Competitors']]
+        both_mentioned = df_gap[df_gap['CPS_Mentioned'] & df_gap['Has_Competitors']]
+        neither_mentioned = df_gap[~df_gap['CPS_Mentioned'] & ~df_gap['Has_Competitors']]
         
         # SECTION 1: EXECUTIVE SUMMARY WITH CLICKABLE CARDS
         st.markdown("## 📊 Executive Summary")
-        st.markdown("**What this tells you:** High-level overview of where Weidert stands in LLM responses")
+        st.markdown("**What this tells you:** High-level overview of where CPS stands in LLM responses")
         st.caption("These four categories help you quickly understand your visibility landscape and identify immediate priorities. **Click on any card to see detailed queries.**")
         
         # Initialize session state for selected category
@@ -1718,7 +1719,7 @@ with tab4:
         col1, col2, col3, col4 = st.columns(4)
         
         with col1:
-            if st.button(f"✅ Exclusive Wins\n\n{len(weidert_only)}\n\nWeidert only, no competitors", 
+            if st.button(f"✅ Exclusive Wins\n\n{len(cps_only)}\n\nCPS only, no competitors", 
                         key="btn_exclusive", use_container_width=True):
                 st.session_state.selected_category = 'exclusive'
             st.caption("**Good:** You own these conversations")
@@ -1747,19 +1748,19 @@ with tab4:
             
             # Determine which dataset to show
             if st.session_state.selected_category == 'exclusive':
-                selected_df = weidert_only
+                selected_df = cps_only
                 category_title = "✅ Exclusive Wins - Detailed View"
-                category_desc = "Queries where Weidert appears and no competitors are mentioned"
+                category_desc = "Queries where CPS appears and no competitors are mentioned"
                 category_color = "#28a745"
             elif st.session_state.selected_category == 'critical':
                 selected_df = competitors_only
                 category_title = "🚨 Critical Gaps - Detailed View"
-                category_desc = "Queries where competitors appear but Weidert doesn't"
+                category_desc = "Queries where competitors appear but CPS doesn't"
                 category_color = "#dc3545"
             elif st.session_state.selected_category == 'competitive':
                 selected_df = both_mentioned
                 category_title = "⚔️ Competitive Arena - Detailed View"
-                category_desc = "Queries where both Weidert and competitors appear"
+                category_desc = "Queries where both CPS and competitors appear"
                 category_color = "#ffc107"
             else:  # blue_ocean
                 selected_df = neither_mentioned
@@ -1791,24 +1792,24 @@ with tab4:
                         st.markdown(f"**Full Query:** {query}")
                         
                         # Show category-specific insights
-                        weidert_in_query = query_responses['Weidert_Mentioned'].any()
+                        cps_in_query = query_responses['CPS_Mentioned'].any()
                         competitors_in_query = query_responses['Has_Competitors'].any()
                         
-                        if weidert_in_query and competitors_in_query:
-                            st.info("🤝 **Status:** Competitive landscape - Both Weidert and competitors present")
-                        elif weidert_in_query:
-                            st.success("✅ **Status:** Weidert dominates - No competitors mentioned")
+                        if cps_in_query and competitors_in_query:
+                            st.info("🤝 **Status:** Competitive landscape - Both CPS and competitors present")
+                        elif cps_in_query:
+                            st.success("✅ **Status:** CPS dominates - No competitors mentioned")
                         elif competitors_in_query:
-                            st.error("⚠️ **Status:** Critical gap - Competitors present, Weidert missing")
+                            st.error("⚠️ **Status:** Critical gap - Competitors present, CPS missing")
                         else:
                             st.warning("💡 **Status:** Opportunity - Generic responses, be first to claim")
                         
-                        # Show which LLMs mention Weidert vs competitors
-                        weidert_sources = query_responses[query_responses['Weidert_Mentioned']]['Source'].tolist()
+                        # Show which LLMs mention CPS vs competitors
+                        cps_sources = query_responses[query_responses['CPS_Mentioned']]['Source'].tolist()
                         competitor_sources = query_responses[query_responses['Has_Competitors']]['Source'].tolist()
                         
-                        if weidert_sources:
-                            st.success(f"✅ **Weidert mentioned by:** {', '.join(weidert_sources)}")
+                        if cps_sources:
+                            st.success(f"✅ **CPS mentioned by:** {', '.join(cps_sources)}")
                         if competitor_sources:
                             st.warning(f"🏆 **Competitors mentioned by:** {', '.join(competitor_sources)}")
                         
@@ -1820,15 +1821,15 @@ with tab4:
                         
                         for col_idx, (_, row) in enumerate(query_responses.iterrows()):
                             with cols[col_idx]:
-                                has_weidert = row['Weidert_Mentioned']
+                                has_cps = row['CPS_Mentioned']
                                 has_competitors = row['Has_Competitors']
                                 
                                 # Determine status and color
-                                if has_weidert and has_competitors:
+                                if has_cps and has_competitors:
                                     status = "🤝 Competitive"
                                     header_color = "#ffc107"
-                                elif has_weidert:
-                                    status = "✅ Weidert Only"
+                                elif has_cps:
+                                    status = "✅ CPS Only"
                                     header_color = "#28a745"
                                 elif has_competitors:
                                     status = "🚨 Gap"
@@ -1861,9 +1862,9 @@ with tab4:
                                     comps = row['Competitors_Found']
                                     st.warning(f"**Competitors:** {comps}")
                                 
-                                # Show if Weidert mentioned
-                                if has_weidert:
-                                    st.success("✓ Weidert mentioned")
+                                # Show if CPS mentioned
+                                if has_cps:
+                                    st.success("✓ CPS mentioned")
                                 
                                 st.markdown("---")
                         
@@ -1890,7 +1891,7 @@ with tab4:
                             st.info("⚔️ **Optimize:** Enhance your content to improve positioning. Consider adding more depth, case studies, or unique insights to stand out from competitors.")
                         
                         else:  # blue_ocean
-                            st.info("💡 **Opportunity:** Create first-mover content to establish Weidert as the authority on this topic before competitors enter the space.")
+                            st.info("💡 **Opportunity:** Create first-mover content to establish CPS as the authority on this topic before competitors enter the space.")
             
             else:
                 st.info(f"No queries found in this category.")
@@ -1900,7 +1901,7 @@ with tab4:
         # SECTION 2: WHERE ARE THE GAPS?
         if len(competitors_only) > 0:
             st.markdown("## 🚨 Critical Gap Analysis")
-            st.markdown("**What this tells you:** Which LLM platforms have the most visibility gaps for Weidert")
+            st.markdown("**What this tells you:** Which LLM platforms have the most visibility gaps for CPS")
             st.caption("Understanding which AI platform is not recommending you helps prioritize optimization efforts. If one LLM consistently excludes you, focus your content optimization for that platform's algorithms.")
             
             col1, col2 = st.columns(2)
@@ -1946,7 +1947,7 @@ with tab4:
             # SECTION 3: WHO'S WINNING IN YOUR GAPS?
             st.markdown("## 🏆 Competitor Analysis in Gaps")
             st.markdown("**What this tells you:** Which competitors are capturing visibility where you're missing")
-            st.caption("These are the brands LLMs recommend instead of Weidert. Understanding who dominates your gaps helps you identify your main competitors and create competitive positioning content.")
+            st.caption("These are the brands LLMs recommend instead of CPS. Understanding who dominates your gaps helps you identify your main competitors and create competitive positioning content.")
             
             all_gap_competitors = []
             for comp_str in competitors_only['Competitors_Found']:
@@ -1974,7 +1975,7 @@ with tab4:
                 top_count = comp_counts.values[0]
                 
                 st.warning(f"🎯 **Primary Threat:** {top_competitor} appears in {top_count} of your gaps - they are your #1 competitor for these queries")
-                st.info(f"💡 **Strategy:** Create comparison content (\"Weidert Group vs {top_competitor}\") and ensure your content addresses the same topics they're being cited for")
+                st.info(f"💡 **Strategy:** Create comparison content (\"Custom Processing Services vs {top_competitor}\") and ensure your content addresses the same topics they're being cited for")
             
             st.divider()
             
@@ -2097,7 +2098,7 @@ with tab4:
         
         else:
             st.success("## 🎉 Excellent Performance!")
-            st.markdown("**No critical gaps found.** Weidert appears in all queries where competitors are mentioned.")
+            st.markdown("**No critical gaps found.** CPS appears in all queries where competitors are mentioned.")
             st.info("Continue monitoring and maintain your strong visibility across all LLM platforms.")
         
         st.divider()
@@ -2112,14 +2113,14 @@ with tab4:
             # Full export
             export_data = df_gap.copy()
             export_data['Gap_Category'] = 'Neither'
-            export_data.loc[export_data['Weidert_Mentioned'] & ~export_data['Has_Competitors'], 'Gap_Category'] = 'Exclusive Win'
-            export_data.loc[~export_data['Weidert_Mentioned'] & export_data['Has_Competitors'], 'Gap_Category'] = 'Critical Gap'
-            export_data.loc[export_data['Weidert_Mentioned'] & export_data['Has_Competitors'], 'Gap_Category'] = 'Competitive'
+            export_data.loc[export_data['CPS_Mentioned'] & ~export_data['Has_Competitors'], 'Gap_Category'] = 'Exclusive Win'
+            export_data.loc[~export_data['CPS_Mentioned'] & export_data['Has_Competitors'], 'Gap_Category'] = 'Critical Gap'
+            export_data.loc[export_data['CPS_Mentioned'] & export_data['Has_Competitors'], 'Gap_Category'] = 'Competitive'
             
             st.download_button(
                 "📥 Download Complete Gap Analysis",
                 export_data.to_csv(index=False),
-                "weidert_complete_gap_analysis.csv",
+                "cps_complete_gap_analysis.csv",
                 "text/csv",
                 help="All responses categorized by gap type"
             )
@@ -2132,9 +2133,9 @@ with tab4:
                 st.download_button(
                     "📥 Download Critical Gaps Only",
                     critical_export.to_csv(index=False),
-                    "weidert_critical_gaps.csv",
+                    "cps_critical_gaps.csv",
                     "text/csv",
-                    help="Only queries where competitors appear but Weidert doesn't"
+                    help="Only queries where competitors appear but CPS doesn't"
                 )
         
         # Next steps guidance
@@ -2172,7 +2173,7 @@ with tab4:
 # ─── TAB 5: TIME-SERIES DASHBOARD ───────────────────────────────────────────
 with tab5:
     st.markdown("### 📊 Time-Series Dashboard")
-    st.caption("Track Weidert's search visibility performance over time")
+    st.caption("Track CPS's search visibility performance over time")
     
     # Input section for Google Sheet URL
     st.markdown("#### 📥 Data Source")
@@ -2273,8 +2274,8 @@ with tab5:
             st.metric("Date Range", f"{date_range_days} days")
         
         with col4:
-            if 'Weidert_Mentioned' in df_dash.columns:
-                overall_mention_rate = (df_dash['Weidert_Mentioned'].sum() / len(df_dash) * 100)
+            if 'CPS_Mentioned' in df_dash.columns:
+                overall_mention_rate = (df_dash['CPS_Mentioned'].sum() / len(df_dash) * 100)
                 st.metric("Overall Mention Rate", f"{overall_mention_rate:.1f}%")
         
         st.markdown("---")
@@ -2284,7 +2285,7 @@ with tab5:
         
         # Calculate metrics by date
         metrics_by_date = df_dash.groupby('Upload_Date_Only').agg({
-            'Weidert_Mentioned': lambda x: (x.sum() / len(x) * 100) if 'Weidert_Mentioned' in df_dash.columns else 0,
+            'CPS_Mentioned': lambda x: (x.sum() / len(x) * 100) if 'CPS_Mentioned' in df_dash.columns else 0,
             'Response_Time': 'mean',
             'Query': 'count'
         }).reset_index()
@@ -2292,9 +2293,9 @@ with tab5:
         metrics_by_date.columns = ['Date', 'Mention_Rate', 'Avg_Response_Time', 'Response_Count']
         
         # Calculate additional metrics by date
-        if 'Weidert_Position' in df_dash.columns:
+        if 'CPS_Position' in df_dash.columns:
             first_third_by_date = df_dash.groupby('Upload_Date_Only').apply(
-                lambda x: (x['Weidert_Position'] == 'First Third').sum() / len(x) * 100
+                lambda x: (x['CPS_Position'] == 'First Third').sum() / len(x) * 100
             ).reset_index(name='First_Third_Rate')
             first_third_by_date.columns = ['Date', 'First_Third_Rate']
             metrics_by_date = metrics_by_date.merge(first_third_by_date, on='Date', how='left')
@@ -2309,9 +2310,9 @@ with tab5:
         # TIME SERIES CHARTS
         st.markdown("## 📊 Time-Series Analysis")
         
-        # Chart 1: Weidert Mention Rate Over Time
-        st.markdown("### 1️⃣ Weidert Mention Rate Trend")
-        st.caption("Shows the percentage of LLM responses that mention Weidert over time")
+        # Chart 1: CPS Mention Rate Over Time
+        st.markdown("### 1️⃣ CPS Mention Rate Trend")
+        st.caption("Shows the percentage of LLM responses that mention CPS over time")
         
         fig1 = go.Figure()
         fig1.add_trace(go.Scatter(
@@ -2362,7 +2363,7 @@ with tab5:
         # Chart 2: First Third Position Rate
         if 'First_Third_Rate' in metrics_by_date.columns:
             st.markdown("### 2️⃣ First Third Position Rate Trend")
-            st.caption("Shows how often Weidert appears in the first third of responses (early mentions are better)")
+            st.caption("Shows how often CPS appears in the first third of responses (early mentions are better)")
             
             fig2 = go.Figure()
             fig2.add_trace(go.Scatter(
@@ -2388,7 +2389,7 @@ with tab5:
         # Chart 3: Positive Context Rate
         if 'Positive_Rate' in metrics_by_date.columns:
             st.markdown("### 3️⃣ Positive Context Rate Trend")
-            st.caption("Shows the percentage of Weidert mentions with positive sentiment")
+            st.caption("Shows the percentage of CPS mentions with positive sentiment")
             
             fig3 = go.Figure()
             fig3.add_trace(go.Scatter(
@@ -2465,10 +2466,10 @@ with tab5:
         # Performance by LLM Source
         if 'Source' in df_dash.columns:
             st.markdown("### 5️⃣ Performance by LLM Platform")
-            st.caption("Compare how different LLMs mention Weidert over time")
+            st.caption("Compare how different LLMs mention CPS over time")
             
             mention_by_source_date = df_dash.groupby(['Upload_Date_Only', 'Source']).apply(
-                lambda x: (x['Weidert_Mentioned'].sum() / len(x) * 100) if 'Weidert_Mentioned' in x.columns else 0
+                lambda x: (x['CPS_Mentioned'].sum() / len(x) * 100) if 'CPS_Mentioned' in x.columns else 0
             ).reset_index(name='Mention_Rate')
             
             fig5 = px.line(
@@ -2505,7 +2506,7 @@ with tab5:
         st.download_button(
             "📥 Download Dashboard Data (CSV)",
             metrics_by_date.to_csv(index=False),
-            "weidert_dashboard_metrics.csv",
+            "cps_dashboard_metrics.csv",
             "text/csv",
             help="Download the aggregated metrics for further analysis"
         )
@@ -2519,12 +2520,12 @@ with tab5:
         1. **Upload data regularly** from Tab 1 to build your time-series dataset
         2. **Paste your Google Sheet URL** in the input box above
         3. **Click 'Load Data'** to load historical data
-        4. **Analyze trends** to see if Weidert's visibility is improving
+        4. **Analyze trends** to see if CPS's visibility is improving
         
         **Key Metrics Tracked:**
-        - 📊 **Mention Rate**: How often Weidert appears in LLM responses
-        - 🥇 **First Third Rate**: How often Weidert appears early in responses
-        - 😊 **Positive Context**: Sentiment of Weidert mentions
+        - 📊 **Mention Rate**: How often CPS appears in LLM responses
+        - 🥇 **First Third Rate**: How often CPS appears early in responses
+        - 😊 **Positive Context**: Sentiment of CPS mentions
         - ⏱️ **Response Time**: Average LLM response speed
         - 🏢 **By Platform**: Performance across different LLMs
         """)
@@ -2533,12 +2534,12 @@ with tab5:
 st.markdown("---")
 st.markdown("""
 <div style='text-align:center; color:#666; font-size:0.9rem; padding:2rem 0;'>
-    <p><strong>Weidert Group LLM Search Visibility Tool</strong></p>
+    <p><strong>Custom Processing Services (CPS) LLM Search Visibility Tool</strong></p>
     <p>AI-Powered Competitive Intelligence • Brand Visibility Analytics</p>
     <p>Powered by OpenAI, Google Gemini, and Perplexity AI</p>
     <p style='font-size:0.8rem; margin-top:1rem;'>
-        <a href='https://www.weidert.com' target='_blank' style='color:#e64626;'>Weidert Group</a>
-        | B2B Industrial Marketing Experts
+        <a href='https://www.cps-processing.com' target='_blank' style='color:#e64626;'>Custom Processing Services</a>
+        | Particle Processing Experts
     </p>
 </div>
 """, unsafe_allow_html=True)
@@ -2562,13 +2563,13 @@ with st.sidebar:
     st.markdown("---")
     st.subheader("🎯 About This Tool")
     st.markdown("""
-    This tool helps Weidert Group monitor how Large Language Models (ChatGPT, Gemini, Perplexity) 
-    respond to queries related to B2B industrial marketing services.
+    This tool helps Custom Processing Services monitor how Large Language Models (ChatGPT, Gemini, Perplexity) 
+    respond to queries related to particle processing and milling services.
     
     **Key Metrics:**
-    - Mention Rate: How often Weidert appears
-    - Position: Where in responses Weidert appears
-    - Context: Sentiment of Weidert mentions
+    - Mention Rate: How often CPS appears
+    - Position: Where in responses CPS appears
+    - Context: Sentiment of CPS mentions
     - Competition: Other agencies mentioned
     """)
 

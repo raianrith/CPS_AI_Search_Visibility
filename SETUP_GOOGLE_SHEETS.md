@@ -1,4 +1,4 @@
-# Google Sheets Setup Guide
+# Google Sheets Setup Guide for CPS
 
 ## Quick Start
 
