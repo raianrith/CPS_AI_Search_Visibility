@@ -1038,12 +1038,10 @@ with tab2:
             col1, col2, col3, col4 = st.columns(4)
             
             with col1:
-                st.metric("Responses with Sources", f"{responses_with_sources}/{len(df_main)}", 
-                         f"{citation_rate:.1f}%")
+                st.metric("Responses with Sources", f"{responses_with_sources}/{len(df_main)}")
             
             with col2:
-                st.metric("CPS Website Citations", f"{cps_url_citations}", 
-                         f"{cps_url_rate:.1f}%")
+                st.metric("CPS Website Citations", f"{cps_url_citations}")
             
             with col3:
                 # Average sources per response
@@ -1478,16 +1476,16 @@ with tab3:
                 neither = (win_loss_df['Outcome'] == '⚪ Neither').sum()
                 
                 with col1:
-                    st.metric("🟢 Wins", wins, f"{wins/len(win_loss_df)*100:.1f}%")
+                    st.metric("🟢 Wins", wins)
                 
                 with col2:
-                    st.metric("🟡 Ties", ties, f"{ties/len(win_loss_df)*100:.1f}%")
+                    st.metric("🟡 Ties", ties)
                 
                 with col3:
-                    st.metric("🔴 Losses", losses, f"{losses/len(win_loss_df)*100:.1f}%")
+                    st.metric("🔴 Losses", losses)
                 
                 with col4:
-                    st.metric("⚪ Neither", neither, f"{neither/len(win_loss_df)*100:.1f}%")
+                    st.metric("⚪ Neither", neither)
                 
                 # Show win/loss breakdown
                 st.dataframe(win_loss_df, use_container_width=True, height=300)
