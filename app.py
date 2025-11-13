@@ -786,7 +786,7 @@ with tab1:
             df['Sources_Cited'] = df['Response'].apply(
                 lambda x: ', '.join(re.findall(r'https?://\S+', str(x))) if not str(x).startswith("ERROR") else ''
             )
-            df['CPS_URL_Cited'] = df['Sources_Cited'].str.contains('cps-processing.com', case=False, na=False)
+            df['CPS_URL_Cited'] = df['Sources_Cited'].str.contains('customprocessingservices.com', case=False, na=False)
             
             # Store in session state
             st.session_state.latest_results = df
@@ -1029,7 +1029,7 @@ with tab2:
             
             # CPS URL citation
             if 'CPS_URL_Cited' not in df_main.columns:
-                df_main['CPS_URL_Cited'] = df_main['Sources_Cited'].str.contains('cps-processing.com', case=False, na=False)
+                df_main['CPS_URL_Cited'] = df_main['Sources_Cited'].str.contains('customprocessingservices.com', case=False, na=False)
             
             cps_url_citations = df_main['CPS_URL_Cited'].sum()
             cps_url_rate = (cps_url_citations / len(df_main) * 100)
@@ -1127,7 +1127,7 @@ with tab2:
                     domain_counts = pd.Series(domains).value_counts().head(15)
                     
                     # Highlight CPS domain
-                    colors = ['#28a745' if 'cps-processing.com' in domain else '#6c757d' for domain in domain_counts.index]
+                    colors = ['#28a745' if 'customprocessingservices.com' in domain else '#6c757d' for domain in domain_counts.index]
                     
                     fig = px.bar(x=domain_counts.values, y=domain_counts.index, orientation='h',
                                title='Top 15 Most Cited Domains',
@@ -1142,7 +1142,7 @@ with tab2:
                     # Show if CPS is in top domains
                     cps_rank = None
                     for rank, (domain, count) in enumerate(domain_counts.items(), 1):
-                        if 'cps-processing.com' in domain:
+                        if 'customprocessingservices.com' in domain:
                             cps_rank = rank
                             break
                     
@@ -2543,7 +2543,7 @@ st.markdown("""
     <p>AI-Powered Competitive Intelligence • Brand Visibility Analytics</p>
     <p>Powered by OpenAI, Google Gemini, and Perplexity AI</p>
     <p style='font-size:0.8rem; margin-top:1rem;'>
-        <a href='https://www.cps-processing.com' target='_blank' style='color:#e64626;'>Custom Processing Services</a>
+        <a href='https://www.customprocessingservices.com' target='_blank' style='color:#e64626;'>Custom Processing Services</a>
         | Particle Processing Experts
     </p>
 </div>
