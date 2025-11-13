@@ -842,6 +842,7 @@ with tab1:
                 help="Leave empty to use default master sheet, or paste your own Google Sheet URL",
                 key="sheet_url_input"
             )
+            st.caption("**CPS Master Sheet:** `https://docs.google.com/spreadsheets/d/1jIIYw8PEBaZ4w2p77rUuQOr446LlvvoK50NPSkMNMNk/edit?gid=0#gid=0`")
             
             if st.button("📊 Upload to Google Sheets", key="upload_to_sheets"):
                 with st.spinner("Uploading to Google Sheets..."):
@@ -2187,6 +2188,7 @@ with tab5:
         help="Paste the URL of the Google Sheet where your historical data is stored",
         key="dashboard_sheet_url"
     )
+    st.caption("**CPS Master Sheet:** `https://docs.google.com/spreadsheets/d/1jIIYw8PEBaZ4w2p77rUuQOr446LlvvoK50NPSkMNMNk/edit?gid=0#gid=0`")
     
     col1, col2 = st.columns([1, 4])
     
